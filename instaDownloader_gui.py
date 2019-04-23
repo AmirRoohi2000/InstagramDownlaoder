@@ -1,3 +1,4 @@
 import requests
 from bs4 import BeautifulSoup as bs
-impoty
+import PyQt5
+from PyQt5 import *
