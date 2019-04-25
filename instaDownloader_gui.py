@@ -34,6 +34,8 @@ def renameDnd():
 def download():
     argument = 'wget ' + txtUrl.toPlainText()
     print(argument)
+    txtUrl.clear()
+    txtName.clear()
     # subprocess.call(argument, shell=True)
 
 
