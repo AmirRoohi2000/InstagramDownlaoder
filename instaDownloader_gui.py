@@ -26,6 +26,11 @@ txtFont = QFont("Times New Roman", 12)
 # set up the font for QPushButton
 btnFont = QFont("Times New Roman", 14)
 
+# a function to rename the downloaded file, if user has specified so
+def renameDnd():
+    pass
+
+# function to download the image(for now just image, later even video, i hope so)
 def download():
     argument = 'wget ' + txtUrl.toPlainText()
     print(argument)
@@ -61,7 +66,7 @@ txtName.move(55, 152)
 txtName.resize(90, 30)
 
 # actually show the things, pretty standard stuff
-rootWidget.setWindowTitle("InstagramDownlaoder - @AmirRoohi2K")
+rootWidget.setWindowTitle("InstaDownlaoder - @AmirRoohi2K")
 rootWidget.setGeometry(100, 100, 300, 220)
 rootWidget.setFont(myFont)
 rootWidget.show()
