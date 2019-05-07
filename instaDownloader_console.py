@@ -1,17 +1,17 @@
 import requests
 from bs4 import BeautifulSoup as bs
-import subprocess
 import os
 import urllib.request
 
 
-def download(imgUrl):
+def download(imgUrl, name):
     request = requests.get(imgUrl)
     renault = request.content
     soup = bs(renault, 'lxml')
     for divData in soup.findAll("meta", property="og:image"):
         imgSrc = divData['content']
-        urllib.request.urlretrieve(imgSrc, 'Downloads/test.png')
+        fileName = 'Downloads/' + name + '.png'
+        urllib.request.urlretrieve(imgSrc, fileName)
 
 
 ''' obsolete code, but might be useful for later
@@ -32,8 +32,9 @@ def checkFolders():
 checkFolders()
 
 # url = input('URL to Post >>> ')
+name = input('Name >>> ')
 
-download('https://www.instagram.com/p/Bwz5CF7AgJf/')
+download('https://www.instagram.com/p/BwuV94-gd6E/', name)
 
 # renameFile('BOI')
 

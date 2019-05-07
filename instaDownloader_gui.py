@@ -1,7 +1,8 @@
 import requests
-import subprocess
-import sys
 from bs4 import BeautifulSoup as bs
+import os
+import urllib.request
+import sys
 import PyQt5
 from PyQt5 import *
 from PyQt5 import QtCore
@@ -27,16 +28,23 @@ txtFont = QFont("Times New Roman", 12)
 btnFont = QFont("Times New Roman", 14)
 
 # a function to rename the downloaded file, if user has specified so
-def renameDnd():
-    pass
+def checkFolders():
+    for files in os.listdir(os.curdir):
+        if not os.path.exists('InstaDownloads'):
+            os.makedirs('InstaDownloads')
 
 # function to download the image(for now just image, later even video, i hope so)
 def download():
-    argument = 'wget ' + txtUrl.toPlainText()
-    print(argument)
+    request = requests.get(txtUrl.toPlainText())
+    renault = request.content
+    soup = bs(renault, 'lxml')
+    for divData in soup.findAll("meta", property="og:image"):
+        imgSrc = divData['content']
+        fileName = 'Downloads/' + txtName.toPlainText() + '.png'
+        urllib.request.urlretrieve(imgSrc, fileName)
+
     txtUrl.clear()
     txtName.clear()
-    # subprocess.call(argument, shell=True)
 
 
 # set up a label
@@ -72,4 +80,5 @@ rootWidget.setWindowTitle("InstaDownlaoder - @AmirRoohi2K")
 rootWidget.setGeometry(100, 100, 300, 220)
 rootWidget.setFont(myFont)
 rootWidget.show()
+checkFolders()
 sys.exit(mainWindow.exec_())
