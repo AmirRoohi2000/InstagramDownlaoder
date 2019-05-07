@@ -40,7 +40,7 @@ def download():
     soup = bs(renault, 'lxml')
     for divData in soup.findAll("meta", property="og:image"):
         imgSrc = divData['content']
-        fileName = 'Downloads/' + txtName.toPlainText() + '.png'
+        fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
         urllib.request.urlretrieve(imgSrc, fileName)
 
     txtUrl.clear()
