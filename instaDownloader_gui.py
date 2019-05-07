@@ -23,7 +23,7 @@ lblStyle = "font-family: 'Times New Roman';\nfont-size: 16px; "
 # set up the font used by the app
 myFont = QFont("Times New Roman", 16)
 # set up the font for QTextEdit
-txtFont = QFont("Times New Roman", 12)
+txtFont = QFont("Times New Roman", 14)
 # set up the font for QPushButton
 btnFont = QFont("Times New Roman", 14)
 
@@ -56,28 +56,28 @@ linkLbl.move(10, 10)
 txtUrl = QTextEdit(rootWidget)
 txtUrl.setFont(txtFont)
 txtUrl.move(5, 40)
-txtUrl.resize(290, 100)
+txtUrl.resize(390, 50)
 
 # set a download button
 btnDownload = QPushButton('Download', rootWidget)
-btnDownload.move(190, 10)
+btnDownload.move(290, 105)
 btnDownload.setFont(btnFont)
 btnDownload.clicked.connect(download)
 
 # set another label to change file name
 lblName = QLabel('Name:', rootWidget)
 lblName.setStyleSheet(lblStyle)
-lblName.move(10, 150)
+lblName.move(8, 100)
 
 # set up a text edit to enter a name
 txtName = QTextEdit(rootWidget)
 txtName.setFont(txtFont)
-txtName.move(55, 152)
-txtName.resize(90, 30)
+txtName.move(53, 102)
+txtName.resize(90, 35)
 
 # actually show the things, pretty standard stuff
 rootWidget.setWindowTitle("InstaDownlaoder - @AmirRoohi2K")
-rootWidget.setGeometry(100, 100, 300, 220)
+rootWidget.setGeometry(100, 100, 400, 180)
 rootWidget.setFont(myFont)
 rootWidget.show()
 checkFolders()
