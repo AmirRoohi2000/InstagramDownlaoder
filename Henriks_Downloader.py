@@ -30,8 +30,8 @@ btnFont = QFont("Times New Roman", 14)
 # a function to rename the downloaded file, if user has specified so
 def checkFolders():
     for files in os.listdir(os.curdir):
-        if not os.path.exists('InstaDownloads'):
-            os.makedirs('InstaDownloads')
+        if not os.path.exists('Instagram Bilder'):
+            os.makedirs('Instagram Bilder')
 
 # function to download the image(for now just image, later even video, i hope so)
 def download():
