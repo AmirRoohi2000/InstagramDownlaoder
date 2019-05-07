@@ -6,11 +6,20 @@ def downlaod(imgUrl):
     request = requests.get(imgUrl)
     resault = request.content
     soup = bs(resault, 'lxml')
-    links = soup.find_all("a")
+    for divdata in soup.findAll('span', {"id": "react-root"}):
+        for links in divdata.findAll('section', {"calss": "_9eogI E3X2T"}):
+            print(links)
 
-    print(links)
+
+downlaod('https://www.instagram.com/p/BvynZtUgJVJ/?hl=en')
 
 
-url = input('URL to post >>> ')
+'''
+https://www.instagram.com/p/BvynZtUgJVJ/?hl=en
 
-downlaod(url)
+for divdata in soup2.findAll('div', {"class": "preview"}):
+    for getatag in divdata.findAll('a', {'class': 'zoom'}):
+        for getimgtag in getatag.findAll('img',src=True):
+            print getimgtag['src']
+
+'''
