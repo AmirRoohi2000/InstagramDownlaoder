@@ -4,13 +4,14 @@ import subprocess
 import os
 
 def downlaod(imgUrl):
+    print(f'{imgUrl}')
     request = requests.get(imgUrl)
     resault = request.content
     soup = bs(resault, 'lxml')
     for divdata in soup.findAll("meta",  property="og:image"):
         imgSrc = divdata['content']
         argument = 'wget --no-check-certificate ' + imgSrc
-        subprocess.call(argument, shell=False)
+        subprocess.call(argument, shell=True)
 
 
 def renameFild(newName):
@@ -20,11 +21,15 @@ def renameFild(newName):
             os.rename(files, newName)
 
 
+
+
+url1 = input('URL to Post >>> ')
+
+downlaod(url1)
+
 renameFild('BOI')
 
-#url = input('URL to Post >>> ')
-
-#downlaod('https://www.instagram.com/p/Bwz5CF7AgJf/')
+#'https://www.instagram.com/p/Bwz5CF7AgJf/'
 
 '''
 working:
