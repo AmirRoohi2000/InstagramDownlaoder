@@ -9,16 +9,22 @@ def downlaod(imgUrl):
     soup = bs(resault, 'lxml')
     for divdata in soup.findAll("meta",  property="og:image"):
         imgSrc = divdata['content']
-        print(imgSrc)
         argument = 'wget --no-check-certificate ' + imgSrc
         subprocess.call(argument, shell=False)
 
 
-def renameFild(origName, newName):
+def renameFild(newName):
     newName = newName + ".png"
-    os.rename(origName, newName)
+    for files in os.listdir(os.curdir):
+        if ".com" in files:
+            os.rename(files, newName)
 
-renameFild('test.com', 'oh_boi')
+
+renameFild('BOI')
+
+#url = input('URL to Post >>> ')
+
+#downlaod('https://www.instagram.com/p/Bwz5CF7AgJf/')
 
 '''
 working:
