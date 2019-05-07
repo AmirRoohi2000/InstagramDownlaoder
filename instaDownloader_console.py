@@ -2,34 +2,42 @@ import requests
 from bs4 import BeautifulSoup as bs
 import subprocess
 import os
+import urllib.request
 
-def downlaod(imgUrl):
-    print(f'{imgUrl}')
+
+def download(imgUrl):
     request = requests.get(imgUrl)
-    resault = request.content
-    soup = bs(resault, 'lxml')
-    for divdata in soup.findAll("meta",  property="og:image"):
-        imgSrc = divdata['content']
-        argument = 'wget --no-check-certificate ' + imgSrc
-        subprocess.call(argument, shell=True)
+    renault = request.content
+    soup = bs(renault, 'lxml')
+    for divData in soup.findAll("meta", property="og:image"):
+        imgSrc = divData['content']
+        urllib.request.urlretrieve(imgSrc, 'Downloads/test.png')
 
 
-def renameFild(newName):
+''' obsolete code, but might be useful for later
+def renameFile(newName):
     newName = newName + ".png"
     for files in os.listdir(os.curdir):
         if ".com" in files:
             os.rename(files, newName)
+'''
 
 
+def checkFolders():
+    for files in os.listdir(os.curdir):
+        if not os.path.exists('Downloads'):
+            os.makedirs('Downloads')
 
 
-url1 = input('URL to Post >>> ')
+checkFolders()
 
-downlaod(url1)
+# url = input('URL to Post >>> ')
 
-renameFild('BOI')
+download('https://www.instagram.com/p/Bwz5CF7AgJf/')
 
-#'https://www.instagram.com/p/Bwz5CF7AgJf/'
+# renameFile('BOI')
+
+# 'https://www.instagram.com/p/Bwz5CF7AgJf/'
 
 '''
 working:
