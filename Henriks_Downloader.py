@@ -76,7 +76,7 @@ txtName.move(53, 102)
 txtName.resize(90, 35)
 
 # actually show the things, pretty standard stuff
-rootWidget.setWindowTitle("Special edition for Henrik - @AmirRoohi2K")
+rootWidget.setWindowTitle("Special edition for Henrik")
 rootWidget.setGeometry(100, 100, 400, 180)
 rootWidget.setFont(myFont)
 rootWidget.show()
