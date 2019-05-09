@@ -36,8 +36,8 @@ def checkFolders():
 # function to download the image(for now just image, later even video, i hope so)
 def download():
     request = requests.get(txtUrl.toPlainText())
-    renault = request.content
-    soup = bs(renault, 'lxml')
+    resault = request.content
+    soup = bs(resault, 'lxml')
     for divData in soup.findAll("meta", property="og:image"):
         imgSrc = divData['content']
         fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
