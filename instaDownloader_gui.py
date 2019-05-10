@@ -38,10 +38,16 @@ def download():
     request = requests.get(txtUrl.toPlainText())
     resault = request.content
     soup = bs(resault, 'lxml')
-    for divData in soup.findAll("meta", property="og:image"):
-        imgSrc = divData['content']
-        fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
-        urllib.request.urlretrieve(imgSrc, fileName)
+    if soup.findAll("meta", property="og:video"):
+        for divData in soup.findAll("meta", property="og:video"):
+            imgSrc = divData['content']
+            fileName = 'InstaDownloads/' + txtName.toPlainText() + '.mp4'
+            urllib.request.urlretrieve(imgSrc, fileName)
+    elif soup.findAll("meta", property="og:image"):
+        for divData in soup.findAll("meta", property="og:image"):
+            imgSrc = divData['content']
+            fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
+            urllib.request.urlretrieve(imgSrc, fileName)
 
     txtUrl.clear()
     txtName.clear()
