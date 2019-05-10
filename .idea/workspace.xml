@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95817dd4-b846-4fe1-8f23-45b8b1322e39" name="Default Changelist" comment="" />
+    <list default="true" id="95817dd4-b846-4fe1-8f23-45b8b1322e39" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/instaDownloader_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/instaDownloader_gui.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/instaDownloader_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+            <state relative-caret-position="343">
+              <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -42,8 +44,8 @@
       <list>
         <option value="$PROJECT_DIR$/instaDownloader.py" />
         <option value="$PROJECT_DIR$/instaDownloader_console.py" />
-        <option value="$PROJECT_DIR$/instaDownloader_gui.py" />
         <option value="$PROJECT_DIR$/Henriks_Downloader.py" />
+        <option value="$PROJECT_DIR$/instaDownloader_gui.py" />
       </list>
     </option>
   </component>
@@ -92,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Henriks_Downloader">
+  <component name="RunManager" selected="Python.instaDownloader_gui">
     <configuration name="Henriks_Downloader" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="InstagramDownlaoder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Henriks_Downloader" />
         <item itemvalue="Python.instaDownloader_gui" />
+        <item itemvalue="Python.Henriks_Downloader" />
         <item itemvalue="Python.instaDownloader_console" />
       </list>
     </recent_temporary>
@@ -201,7 +203,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26688102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2658092" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -234,20 +236,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Henriks_Downloader.py" />
     <entry file="file://$PROJECT_DIR$/instaDownloader_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Henriks_Downloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
+        <state relative-caret-position="343">
+          <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
