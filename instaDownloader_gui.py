@@ -53,25 +53,6 @@ def download():
     txtName.clear()
 
 
-def newDownload():
-    request = requests.get(txtUrl.toPlainText())
-    resault = request.content
-    soup = bs(resault, 'lxml')
-    if soup.findAll("meta", property="og:video"):
-        for divData in soup.findAll("meta", property="og:video"):
-            imgSrc = divData['content']
-            fileName = 'InstaDownloads/' + txtName.toPlainText() + '.mp4'
-            urllib.request.urlretrieve(imgSrc, fileName)
-    elif soup.findAll("meta", property="og:image"):
-        for divData in soup.findAll("meta", property="og:image"):
-            imgSrc = divData['content']
-            fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
-            urllib.request.urlretrieve(imgSrc, fileName)
-
-    txtUrl.clear()
-    txtName.clear()
-
-
 # set up a label
 linkLbl = QLabel("Link:", rootWidget)
 linkLbl.setStyleSheet(lblStyle)
@@ -87,7 +68,7 @@ txtUrl.resize(390, 50)
 btnDownload = QPushButton('Download', rootWidget)
 btnDownload.move(290, 105)
 btnDownload.setFont(btnFont)
-btnDownload.clicked.connect(newDownload)
+btnDownload.clicked.connect(download)
 
 # set another label to change file name
 lblName = QLabel('Name:', rootWidget)
