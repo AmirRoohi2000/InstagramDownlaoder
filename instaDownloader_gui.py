@@ -3,14 +3,8 @@ from bs4 import BeautifulSoup as bs
 import os
 import urllib.request
 import sys
-import PyQt5
-from PyQt5 import *
-from PyQt5 import QtCore
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont, QIcon, QTextDocument
-from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
-from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QFileDialog, QDialog, QLabel, QTextEdit, QPushButton, \
-    QCheckBox, QComboBox, QFontComboBox, QColorDialog, QErrorMessage, QMessageBox
+from PyQt5.QtGui import QFont, QIcon
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QTextEdit, QPushButton, QErrorMessage
 
 # set up the app stuff they have to be done
 mainWindow = QApplication(sys.argv)
