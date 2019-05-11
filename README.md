@@ -1,5 +1,5 @@
 With this tool, you can download Images and Videos from Instagram!
-
+Best part is, no one will find out, NICE!
 A compiled version for windows is under the release tab
 
 <h1>How to use:</h1>
