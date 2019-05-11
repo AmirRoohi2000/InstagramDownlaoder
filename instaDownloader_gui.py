@@ -19,13 +19,14 @@ rootWidget = QMainWindow = QMainWindow()
 
 # set the style for the lables
 lblStyle = "font-family: 'Times New Roman';\nfont-size: 16px; "
-
 # set up the font used by the app
 myFont = QFont("Times New Roman", 16)
 # set up the font for QTextEdit
 txtFont = QFont("Times New Roman", 14)
 # set up the font for QPushButton
 btnFont = QFont("Times New Roman", 14)
+# set an icon for the window
+icon = QIcon('insta.ico')
 
 # a function to rename the downloaded file, if user has specified so
 def checkFolders():
@@ -85,6 +86,7 @@ txtName.resize(90, 35)
 rootWidget.setWindowTitle("InstaDownlaoder - @AmirRoohi2K")
 rootWidget.setGeometry(100, 100, 400, 180)
 rootWidget.setFont(myFont)
+rootWidget.setWindowIcon(icon)
 rootWidget.show()
 checkFolders()
 sys.exit(mainWindow.exec_())
