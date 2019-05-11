@@ -10,8 +10,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QIcon, QTextDocument
 from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
 from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QFileDialog, QDialog, QLabel, QTextEdit, QPushButton, \
-    QCheckBox, QComboBox, QFontComboBox, QColorDialog
-
+    QCheckBox, QComboBox, QFontComboBox, QColorDialog, QErrorMessage, QMessageBox
 
 # set up the app stuff they have to be done
 mainWindow = QApplication(sys.argv)
@@ -30,28 +29,36 @@ icon = QIcon('insta.ico')
 
 # a function to rename the downloaded file, if user has specified so
 def checkFolders():
-    for files in os.listdir(os.curdir):
-        if not os.path.exists('InstaDownloads'):
-            os.makedirs('InstaDownloads')
+    try:
+        for files in os.listdir(os.curdir):
+            if not os.path.exists('InstaDownloads'):
+                os.makedirs('InstaDownloads')
+    except Exception as ex:
+        msg = QErrorMessage()
+        msg.showMessage(str(ex))
 
 # function to download the image(for now just image, later even video, i hope so)
 def download():
-    request = requests.get(txtUrl.toPlainText())
-    resault = request.content
-    soup = bs(resault, 'lxml')
-    if soup.findAll("meta", property="og:video"):
-        for divData in soup.findAll("meta", property="og:video"):
-            imgSrc = divData['content']
-            fileName = 'InstaDownloads/' + txtName.toPlainText() + '.mp4'
-            urllib.request.urlretrieve(imgSrc, fileName)
-    elif soup.findAll("meta", property="og:image"):
-        for divData in soup.findAll("meta", property="og:image"):
-            imgSrc = divData['content']
-            fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
-            urllib.request.urlretrieve(imgSrc, fileName)
+    try:
+        request = requests.get(txtUrl.toPlainText())
+        resault = request.content
+        soup = bs(resault, 'lxml')
+        if soup.findAll("meta", property="og:video"):
+            for divData in soup.findAll("meta", property="og:video"):
+                imgSrc = divData['content']
+                fileName = 'InstaDownloads/' + txtName.toPlainText() + '.mp4'
+                urllib.request.urlretrieve(imgSrc, fileName)
+        elif soup.findAll("meta", property="og:image"):
+            for divData in soup.findAll("meta", property="og:image"):
+                imgSrc = divData['content']
+                fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
+                urllib.request.urlretrieve(imgSrc, fileName)
 
-    txtUrl.clear()
-    txtName.clear()
+        txtUrl.clear()
+        txtName.clear()
+    except Exception as ex:
+        msg = QErrorMessage()
+        msg.showMessage(str(ex))
 
 
 # set up a label
@@ -59,7 +66,7 @@ linkLbl = QLabel("Link:", rootWidget)
 linkLbl.setStyleSheet(lblStyle)
 linkLbl.move(10, 10)
 
-# set a multiline text box
+# set a multi-line text box
 txtUrl = QTextEdit(rootWidget)
 txtUrl.setFont(txtFont)
 txtUrl.move(5, 40)
