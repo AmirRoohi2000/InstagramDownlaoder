@@ -1,0 +1,88 @@
+Metadata-Version: 2.1
+Name: vexbot
+Version: 0.4.5
+Summary: Python personal assistant
+Home-page: https://github.com/benhoff/vexbot
+Author: Ben Hoff
+Author-email: beohoff@gmail.com
+License: GPL3
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Operating System :: POSIX :: Linux
+Provides-Extra: system
+Provides-Extra: digitalocean
+Provides-Extra: socket_io
+Provides-Extra: microphone
+Provides-Extra: command_line
+Provides-Extra: summarization
+Provides-Extra: database
+Provides-Extra: nlp
+Provides-Extra: process_name
+Provides-Extra: process_manager
+Provides-Extra: gui
+Provides-Extra: youtube
+Provides-Extra: entity
+Provides-Extra: dev
+Provides-Extra: irc
+Provides-Extra: speechtotext
+Provides-Extra: xmpp
+Requires-Dist: pyzmq
+Requires-Dist: vexmessage (>=0.4.0)
+Requires-Dist: rx
+Requires-Dist: tblib
+Requires-Dist: tornado
+Requires-Dist: prompt-toolkit (>=2.0.0)
+Provides-Extra: command_line
+Requires-Dist: pygments; extra == 'command_line'
+Provides-Extra: database
+Requires-Dist: vexstorage; extra == 'database'
+Provides-Extra: dev
+Requires-Dist: flake8; extra == 'dev'
+Requires-Dist: twine; extra == 'dev'
+Requires-Dist: wheel; extra == 'dev'
+Requires-Dist: pygments; extra == 'dev'
+Requires-Dist: sphinx; extra == 'dev'
+Provides-Extra: digitalocean
+Requires-Dist: python-digitalocean; extra == 'digitalocean'
+Provides-Extra: entity
+Requires-Dist: duckling; extra == 'entity'
+Provides-Extra: gui
+Requires-Dist: chatimusmaximus; extra == 'gui'
+Provides-Extra: irc
+Requires-Dist: irc3; extra == 'irc'
+Provides-Extra: microphone
+Requires-Dist: microphone; extra == 'microphone'
+Provides-Extra: nlp
+Requires-Dist: wheel; extra == 'nlp'
+Requires-Dist: spacy; extra == 'nlp'
+Requires-Dist: sklearn; extra == 'nlp'
+Requires-Dist: sklearn-crfsuite; extra == 'nlp'
+Requires-Dist: scipy; extra == 'nlp'
+Provides-Extra: process_manager
+Requires-Dist: pydbus; extra == 'process_manager'
+Provides-Extra: process_name
+Requires-Dist: setproctitle; extra == 'process_name'
+Provides-Extra: socket_io
+Requires-Dist: requests; extra == 'socket_io'
+Requires-Dist: websocket-client; extra == 'socket_io'
+Provides-Extra: speechtotext
+Requires-Dist: speechtotext; extra == 'speechtotext'
+Provides-Extra: summarization
+Requires-Dist: gensim; extra == 'summarization'
+Requires-Dist: newspaper3k; extra == 'summarization'
+Provides-Extra: system
+Requires-Dist: psutil; extra == 'system'
+Provides-Extra: xmpp
+Requires-Dist: sleekxmpp; extra == 'xmpp'
+Requires-Dist: dnspython; extra == 'xmpp'
+Provides-Extra: youtube
+Requires-Dist: google-api-python-client; extra == 'youtube'
+
+UNKNOWN
+
+

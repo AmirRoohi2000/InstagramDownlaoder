@@ -1,4 +1,5 @@
 import requests
+import json
 from bs4 import BeautifulSoup as bs
 import os
 import urllib.request
@@ -55,6 +56,18 @@ def download():
         msg.showMessage(str(ex))
 
 
+def newDnd():
+    request = requests.get('https://www.instagram.com/zeitlos.memes/p/Bx0TZYSi2Ay/')
+    resault = request.content
+    soup = bs(resault, 'lxml')
+
+    for src in soup.findAll('script', type='text/javascript'):
+        if 'display_url' in src:
+            print(src)
+
+    txtUrl.clear()
+
+
 # set up a label
 linkLbl = QLabel("Link:", rootWidget)
 linkLbl.setStyleSheet(lblStyle)
@@ -70,7 +83,7 @@ txtUrl.resize(390, 50)
 btnDownload = QPushButton('Download', rootWidget)
 btnDownload.move(290, 105)
 btnDownload.setFont(btnFont)
-btnDownload.clicked.connect(download)
+btnDownload.clicked.connect(newDnd)
 
 # set another label to change file name
 lblName = QLabel('Name:', rootWidget)

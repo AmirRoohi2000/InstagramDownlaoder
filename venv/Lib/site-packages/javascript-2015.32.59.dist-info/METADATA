@@ -1,0 +1,9 @@
+Metadata-Version: 1.2
+Name: javascript
+Version: 2015.32.59
+Summary: The joy of javscript from Python.
+Home-page: https://github.com/Carreau/javascript.py
+License: UNKNOWN
+Author: Matthias Bussonnier
+Author-email: bussonniermatthias@gmail.com
+Classifier: License :: OSI Approved :: MIT License

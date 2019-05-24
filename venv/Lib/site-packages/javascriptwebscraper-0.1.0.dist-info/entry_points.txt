@@ -1,0 +1,3 @@
+[vexbot.adapters]
+javascriptwebscraper = javascriptwebscraper.__main__
+

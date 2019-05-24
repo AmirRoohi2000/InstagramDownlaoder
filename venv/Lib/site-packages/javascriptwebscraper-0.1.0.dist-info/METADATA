@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: javascriptwebscraper
+Version: 0.1.0
+Summary: javascript webscaper for youtube for Vexbot
+Home-page: https://github.com/benhoff/javascriptwebscraper
+Author: Ben Hoff
+Author-email: beohoff@gmail.com
+License: GPL3
+Keywords: youtube javascript webscraper
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Multimedia :: Sound/Audio :: Capture/Recording
+Classifier: Topic :: Utilities
+Classifier: Operating System :: OS Independent
+Requires-Dist: pyzmq
+Requires-Dist: selenium
+Requires-Dist: vexbot
+Requires-Dist: vexmessage
+Provides-Extra: dev
+Requires-Dist: flake8; extra == 'dev'
+
+UNKNOWN
+
+
