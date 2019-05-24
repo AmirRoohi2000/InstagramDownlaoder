@@ -57,13 +57,17 @@ def download():
 
 
 def newDnd():
-    request = requests.get('https://www.instagram.com/zeitlos.memes/p/Bx0TZYSi2Ay/')
+    request = requests.get(txtUrl.toPlainText())
     resault = request.content
     soup = bs(resault, 'lxml')
 
-    for src in soup.findAll('script', type='text/javascript'):
-        if 'display_url' in src:
-            print(src)
+    ul = soup.findAll('ul', {'class': 'YlNGR'})
+    print(ul)
+
+    # data = soup.find_all('ul', {'class': 'YlNGR'})
+    # for divData in data.findAll('img'):
+    #     imgSrc = divData['src']
+    #     print(divData)
 
     txtUrl.clear()
 
