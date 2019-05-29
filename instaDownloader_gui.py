@@ -6,6 +6,7 @@ import urllib.request
 import sys
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QTextEdit, QPushButton, QErrorMessage
+import re
 
 # set up the app stuff they have to be done
 mainWindow = QApplication(sys.argv)
@@ -61,15 +62,8 @@ def newDnd():
     resault = request.content
     soup = bs(resault, 'lxml')
 
-    ul = soup.findAll('ul', {'class': 'YlNGR'})
-    print(ul)
-
-    # data = soup.find_all('ul', {'class': 'YlNGR'})
-    # for divData in data.findAll('img'):
-    #     imgSrc = divData['src']
-    #     print(divData)
-
-    txtUrl.clear()
+    imgs = soup.findAll('img')
+    print(imgs)
 
 
 # set up a label
@@ -87,7 +81,7 @@ txtUrl.resize(390, 50)
 btnDownload = QPushButton('Download', rootWidget)
 btnDownload.move(290, 105)
 btnDownload.setFont(btnFont)
-btnDownload.clicked.connect(newDnd)
+btnDownload.clicked.connect(download)
 
 # set another label to change file name
 lblName = QLabel('Name:', rootWidget)
