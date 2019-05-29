@@ -24,9 +24,12 @@ def download(imgUrl, name):
 
 
 def checkFolders():
-    for files in os.listdir(os.curdir):
-        if not os.path.exists('Downloads'):
-            os.makedirs('Downloads')
+    try:
+        for files in os.listdir(os.curdir):
+            if not os.path.exists('InstaDownloads'):
+                os.makedirs('InstaDownloads')
+    except Exception as ex:
+        print(str(ex))
 
 
 checkFolders()

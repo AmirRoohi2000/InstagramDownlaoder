@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instaDownloader_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="55" column="32" lean-forward="true" selection-start-line="35" selection-end-line="55" selection-end-column="32" />
+            <state relative-caret-position="366">
+              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="32" selection-end-column="32" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/instaDownloader_console.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+            <state relative-caret-position="651">
+              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -244,8 +244,8 @@
     <entry file="file://$PROJECT_DIR$/Henriks_Downloader.py" />
     <entry file="file://$PROJECT_DIR$/instaDownloader_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="55" column="32" lean-forward="true" selection-start-line="35" selection-end-line="55" selection-end-column="32" />
+        <state relative-caret-position="366">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="32" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -254,8 +254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/instaDownloader_console.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+        <state relative-caret-position="651">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
