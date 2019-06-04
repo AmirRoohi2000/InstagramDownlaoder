@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95817dd4-b846-4fe1-8f23-45b8b1322e39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/instaDownloader_console.py" beforeDir="false" afterPath="$PROJECT_DIR$/instaDownloader_console.py" afterDir="false" />
-    </list>
+    <list default="true" id="95817dd4-b846-4fe1-8f23-45b8b1322e39" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/instaDownloader_console.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="49" column="118" selection-start-line="49" selection-start-column="118" selection-end-line="49" selection-end-column="118" />
+            <state relative-caret-position="507">
+              <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#117#863#0" />
@@ -233,8 +231,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/instaDownloader_console.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="49" column="118" selection-start-line="49" selection-start-column="118" selection-end-line="49" selection-end-column="118" />
+        <state relative-caret-position="507">
+          <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <element signature="e#117#863#0" />
