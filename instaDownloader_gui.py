@@ -6,6 +6,12 @@ import sys
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QTextEdit, QPushButton, QErrorMessage
 
+'''
+SIDE NOTE
+the console version is now mainly a side tool for the new GUI version, which is going to be written in C#,
+just use the GUI version, but use this one if you want to look cool!
+'''
+
 # set up the app stuff they have to be done
 mainWindow = QApplication(sys.argv)
 rootWidget = QMainWindow = QMainWindow()
