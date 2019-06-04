@@ -1,18 +1,16 @@
 import requests
-import json
 from bs4 import BeautifulSoup as bs
 import os
 import urllib.request
 import sys
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QTextEdit, QPushButton, QErrorMessage
-import re
 
 # set up the app stuff they have to be done
 mainWindow = QApplication(sys.argv)
 rootWidget = QMainWindow = QMainWindow()
 
-# set the style for the lables
+# set the style for the labels
 lblStyle = "font-family: 'Times New Roman';\nfont-size: 16px; "
 # set up the font used by the app
 myFont = QFont("Times New Roman", 16)
@@ -55,15 +53,6 @@ def download():
     except Exception as ex:
         msg = QErrorMessage()
         msg.showMessage(str(ex))
-
-
-def newDnd():
-    request = requests.get(txtUrl.toPlainText())
-    resault = request.content
-    soup = bs(resault, 'lxml')
-
-    imgs = soup.findAll('img')
-    print(imgs)
 
 
 # set up a label
