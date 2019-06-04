@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 import os
 import urllib.request
+import argparse
 
 def download(imgUrl, name):
     try:
@@ -34,7 +35,11 @@ def checkFolders():
 
 checkFolders()
 
-url = input('URL to Post >>> ')
-name = input('Name >>> ')
+# create an ArgumentParser object
+parser = argparse.ArgumentParser(description='Download a post from Instagram, be it photo or video!')
 
-download(url, name)
+# create an argument to take
+parser.add_argument('-u', '--URL', type=str, metavar='', required=True, help='The URL of that post, something like this >>> https://www.instagram.com/[authot]/p/xxxxxxxxxxxx/')
+parser.add_argument('-n', '--Name', type=str, metavar='', required=True, help='The name for the downloaded post, a name is enough, the programm will add the extension and formatting automagically!')
+
+# create a group of extra arguments, only one can be used at a time
