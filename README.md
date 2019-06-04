@@ -13,6 +13,6 @@ Image >>> png </br>
 Video >>> mp4 </br></br>
 
 the console version is now mainly a side tool for the new GUI version, which is going to be written in C#,
-just use the GUI version, but use this one if you want to look cool!
+just use the python GUI version, but use the consoel version if you want to look cool!
 
 <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
