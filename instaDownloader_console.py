@@ -39,7 +39,7 @@ checkFolders()
 parser = argparse.ArgumentParser(description='Download a post from Instagram, be it photo or video!')
 
 # create an argument to take
-parser.add_argument('-u', '--URL', type=str, metavar='', required=True, help='The URL of that post, something like this >>> https://www.instagram.com/[authot]/p/xxxxxxxxxxxx/')
+parser.add_argument('-u', '--URL', type=str, metavar='', required=True, help='The URL of that post, something like this >>> https://www.instagram.com/[author]/p/xxxxxxxxxxxx/')
 parser.add_argument('-n', '--Name', type=str, metavar='', required=True, help='The name for the downloaded post, a name is enough, the programm will add the extension and formatting automagically!')
 
 # create a group of extra arguments, only one can be used at a time
