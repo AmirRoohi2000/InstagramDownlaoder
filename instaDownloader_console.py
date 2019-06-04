@@ -47,3 +47,7 @@ group = parser.add_mutually_exclusive_group()
 
 # add arguments to that group
 group.add_argument('-q', '--quite', action='store_true', help='Just print \'DONE!\' if successful')
+group.add_argument('-v', '--verbose', action='store_true', help='Full hacker style verbose for cool looks (like y not right?)')
+
+# put all the arguments in one value for later use
+arguments = parser.parse_args()
