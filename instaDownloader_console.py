@@ -43,3 +43,7 @@ parser.add_argument('-u', '--URL', type=str, metavar='', required=True, help='Th
 parser.add_argument('-n', '--Name', type=str, metavar='', required=True, help='The name for the downloaded post, a name is enough, the programm will add the extension and formatting automagically!')
 
 # create a group of extra arguments, only one can be used at a time
+group = parser.add_mutually_exclusive_group()
+
+# add arguments to that group
+group.add_argument('-q', '--quite', action='store_true', help='Just print \'DONE!\' if successful')
