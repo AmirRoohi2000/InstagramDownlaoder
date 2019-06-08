@@ -1,24 +1,27 @@
+'''
+first we import everything we need, i think this part of comments are useless, but still
+'''
 import requests
 from bs4 import BeautifulSoup as bs
 import os
 import urllib.request
 import argparse
 
-def getName(imgUrl):
+def getName(imgUrl):  # with this function, i grab the id of the post
     try:
-        request = requests.get(imgUrl)
-        resault = request.content
-        soup = bs(resault, 'lxml')
-        for divData in soup.findAll("meta", property="og:url"):
-            text = divData['content'] # so first save the string
-            name1 = text.lstrip('https://www.instagram.com/p/') # remove this part form that string
-            name = name1.replace('/', '') # replace / with nothing
+        request = requests.get(imgUrl)  # pass in the url
+        resault = request.content  # scrap the data
+        soup = bs(resault, 'lxml')  # i think this beutifies it
+        for divData in soup.findAll("meta", property="og:url"):  # save the meta with the property "og:url" in divData
+            text = divData['content']  # save the string
+            name1 = text.lstrip('https://www.instagram.com/p/')  # remove this part form that string
+            name = name1.replace('/', '')  # replace / with nothing
 
-        return name
+        return name  # return the post ID
     except Exception as ex:
         print(str(ex))
 
-def download(imgUrl):
+def download(imgUrl):  # 
     try:
         name = getName(imgUrl)
         request = requests.get(imgUrl)
