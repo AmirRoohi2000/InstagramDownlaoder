@@ -16,7 +16,7 @@ def getName(imgUrl):
             name1 = text.lstrip('https://www.instagram.com/p/') # remove this part form that string
             name = name1.replace('/', '') # replace / with nothing
 
-        return  name
+        return name
     except Exception as ex:
         print(str(ex))
 
