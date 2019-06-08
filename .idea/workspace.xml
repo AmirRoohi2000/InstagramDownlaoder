@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95817dd4-b846-4fe1-8f23-45b8b1322e39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/instaDownloader_console.py" beforeDir="false" afterPath="$PROJECT_DIR$/instaDownloader_console.py" afterDir="false" />
-    </list>
+    <list default="true" id="95817dd4-b846-4fe1-8f23-45b8b1322e39" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +226,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16227607" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
