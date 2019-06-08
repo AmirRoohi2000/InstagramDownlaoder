@@ -4,8 +4,21 @@ import os
 import urllib.request
 import argparse
 
-def download(imgUrl, name):
+def getName(imgUrl):
     try:
+        request = requests.get(imgUrl)
+        resault = request.content
+        soup = bs(resault, 'lxml')
+        for divData in soup.findAll("meta", property="og:title"):
+            imgName = divData['content']
+
+        return  imgName
+    except Exception as ex:
+        print(str(ex))
+
+def download(imgUrl):
+    try:
+        name = getName(imgUrl)
         request = requests.get(imgUrl)
         resault = request.content
         soup = bs(resault, 'lxml')
