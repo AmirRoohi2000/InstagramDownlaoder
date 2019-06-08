@@ -1,3 +1,7 @@
+'''
+Mainly for testing so yeah
+'''
+
 import requests
 from bs4 import BeautifulSoup as bs
 import os
