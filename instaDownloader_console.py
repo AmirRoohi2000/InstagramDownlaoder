@@ -87,7 +87,10 @@ group.add_argument('-v', '--verbose', action='store_true', help='Full hacker sty
 arguments = parser.parse_args()
 
 if arguments.quite:
-    download(arguments.URL, arguments.Name)
+    if arguments.Name:
+        downloadName(arguments.URL, arguments.Name)
+    else:
+        download(arguments.URL)
 elif arguments.verbose:
     download(arguments.URL, arguments.Name)
     print('[+] Got input')
