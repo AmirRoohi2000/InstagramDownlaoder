@@ -4,6 +4,20 @@ import os
 import urllib.request
 import argparse
 
+def getName(imgUrl):
+    try:
+        request = requests.get(imgUrl)
+        resault = request.content
+        soup = bs(resault, 'lxml')
+        for divData in soup.findAll("meta", property="og:url"):
+            text = divData['content'] # so first save the string
+            name1 = text.lstrip('https://www.instagram.com/p/') # remove this part form that string
+            name = name1.replace('/', '') # replace / with nothing
+
+        return name
+    except Exception as ex:
+        print(str(ex))
+
 def download(imgUrl, name):
     try:
         request = requests.get(imgUrl)
@@ -40,7 +54,6 @@ parser = argparse.ArgumentParser(description='Download a post from Instagram, be
 
 # create an argument to take
 parser.add_argument('-u', '--URL', type=str, metavar='', required=True, help='The URL of that post, something like this >>> https://www.instagram.com/[author]/p/xxxxxxxxxxxx/')
-parser.add_argument('-n', '--Name', type=str, metavar='', required=True, help='The name for the downloaded post, a name is enough, the programm will add the extension and formatting automagically!')
 
 # create a group of extra arguments, only one can be used at a time
 group = parser.add_mutually_exclusive_group()
@@ -48,6 +61,7 @@ group = parser.add_mutually_exclusive_group()
 # add arguments to that group
 group.add_argument('-q', '--quite', action='store_true', help='Will download the post and exit immediately')
 group.add_argument('-v', '--verbose', action='store_true', help='Full hacker style verbose for cool looks (like y not, right?)')
+group.add_argument('-n', '--Name', type=str, metavar='', required=True, help='The name for the downloaded post, a name is enough, the programm will add the extension and formatting automagically!')
 
 # put all the arguments in one value for later use
 arguments = parser.parse_args()
