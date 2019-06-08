@@ -92,12 +92,24 @@ if arguments.quite:
     else:
         download(arguments.URL)
 elif arguments.verbose:
-    download(arguments.URL, arguments.Name)
-    print('[+] Got input')
-    print('[+] Found post')
-    print('[+] Downloaded post')
-    print('[+] Renamed post')
-    print('[+] Enjoy!')
+    if arguments.Name:
+        downloadName(arguments.URL, arguments.Name)
+        print('[+] Got input')
+        print('[+] Found post')
+        print('[+] Downloaded post')
+        print('[+] Renamed post')
+        print('[+] Enjoy!')
+    else:
+        download(arguments.URL)
+        print('[+] Got input')
+        print('[+] Found post')
+        print('[+] Downloaded post')
+        print('[+] Renamed post')
+        print('[+] Enjoy!')
 else:
-    download(arguments.URL, arguments.Name)
-    print('DONE!')
+    if arguments.Name:
+        downloadName(arguments.URL, arguments.Name)
+        print('DONE!')
+    else:
+        download(arguments.URL)
+        print('DONE!')
