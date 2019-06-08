@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup as bs
 import os
 import urllib.request
 import argparse
-import re
 
 
 def getName(imgUrl):
