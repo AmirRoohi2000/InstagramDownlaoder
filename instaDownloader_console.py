@@ -18,7 +18,27 @@ def getName(imgUrl):
     except Exception as ex:
         print(str(ex))
 
-def download(imgUrl, name):
+def download(imgUrl):
+    try:
+        name = getName(imgUrl)
+        request = requests.get(imgUrl)
+        resault = request.content
+        soup = bs(resault, 'lxml')
+        if soup.findAll("meta", property="og:video"):
+            for divData in soup.findAll("meta", property="og:video"):
+                imgSrc = divData['content']
+                fileName = 'InstaDownloads/' + name + '.mp4'
+                urllib.request.urlretrieve(imgSrc, fileName)
+        elif soup.findAll("meta", property="og:image"):
+            for divData in soup.findAll("meta", property="og:image"):
+                imgSrc = divData['content']
+                fileName = 'InstaDownloads/' + name + '.png'
+                urllib.request.urlretrieve(imgSrc, fileName)
+
+    except Exception as ex:
+        print(str(ex))
+
+def downloadName(imgUrl, name):
     try:
         request = requests.get(imgUrl)
         resault = request.content
