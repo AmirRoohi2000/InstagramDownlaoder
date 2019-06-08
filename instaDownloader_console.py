@@ -21,7 +21,7 @@ def getName(imgUrl):  # with this function, i grab the id of the post
     except Exception as ex:
         print(str(ex))
 
-def download(imgUrl):  # 
+def download(imgUrl):  #
     try:
         name = getName(imgUrl)
         request = requests.get(imgUrl)
