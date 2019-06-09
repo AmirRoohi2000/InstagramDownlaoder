@@ -49,46 +49,41 @@ def checkFolders():
 # function to download the image(for now just image, later even video, i hope so)
 def download():
     try:
-        name = getName(txtUrl.toPlainText())
-        request = requests.get(txtUrl.toPlainText())
-        resault = request.content
-        soup = bs(resault, 'lxml')
-        if soup.findAll("meta", property="og:video"):
-            for divData in soup.findAll("meta", property="og:video"):
-                imgSrc = divData['content']
-                fileName = 'InstaDownloads/' + name + '.mp4'
-                urllib.request.urlretrieve(imgSrc, fileName)
-        elif soup.findAll("meta", property="og:image"):
-            for divData in soup.findAll("meta", property="og:image"):
-                imgSrc = divData['content']
-                fileName = 'InstaDownloads/' + name + '.png'
-                urllib.request.urlretrieve(imgSrc, fileName)
+        if txtName.toPlainText() == "" or txtName.toPlainText() == " ":  # if name is empty, grab the post id as name
+            name = getName(txtUrl.toPlainText())
+            request = requests.get(txtUrl.toPlainText())
+            resault = request.content
+            soup = bs(resault, 'lxml')
+            if soup.findAll("meta", property="og:video"):
+                for divData in soup.findAll("meta", property="og:video"):
+                    imgSrc = divData['content']
+                    fileName = 'InstaDownloads/' + name + '.mp4'
+                    urllib.request.urlretrieve(imgSrc, fileName)
+            elif soup.findAll("meta", property="og:image"):
+                for divData in soup.findAll("meta", property="og:image"):
+                    imgSrc = divData['content']
+                    fileName = 'InstaDownloads/' + name + '.png'
+                    urllib.request.urlretrieve(imgSrc, fileName)
+        else:  # otherwise, just use the given name
+            request = requests.get(txtUrl.toPlainText())
+            resault = request.content
+            soup = bs(resault, 'lxml')
+            if soup.findAll("meta", property="og:video"):
+                for divData in soup.findAll("meta", property="og:video"):
+                    imgSrc = divData['content']
+                    fileName = 'InstaDownloads/' + txtName.toPlainText() + '.mp4'
+                    urllib.request.urlretrieve(imgSrc, fileName)
+            elif soup.findAll("meta", property="og:image"):
+                for divData in soup.findAll("meta", property="og:image"):
+                    imgSrc = divData['content']
+                    fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
+                    urllib.request.urlretrieve(imgSrc, fileName)
 
         txtUrl.clear()
         txtName.clear()
     except Exception as ex:
         msg = QErrorMessage()
         msg.showMessage(str(ex))
-
-
-def downloadName():  # this function is the same as above, only that you pick a name
-    try:
-        request = requests.get(txtUrl.toPlainText())
-        resault = request.content
-        soup = bs(resault, 'lxml')
-        if soup.findAll("meta", property="og:video"):
-            for divData in soup.findAll("meta", property="og:video"):
-                imgSrc = divData['content']
-                fileName = 'InstaDownloads/' + txtName.toPlainText() + '.mp4'
-                urllib.request.urlretrieve(imgSrc, fileName)
-        elif soup.findAll("meta", property="og:image"):
-            for divData in soup.findAll("meta", property="og:image"):
-                imgSrc = divData['content']
-                fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
-                urllib.request.urlretrieve(imgSrc, fileName)
-
-    except Exception as ex:
-        print(str(ex))
 
 
 # set up a label
