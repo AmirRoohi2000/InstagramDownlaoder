@@ -21,8 +21,7 @@ def getName(imgUrl):  # with this function, i grab the id of the post
         print(str(ex))
 
 
-def download(
-        imgUrl):  # this function grabs the data from the given url and downloads the post, with the post id as its name
+def download(imgUrl):  # this function grabs the data from the given url and downloads the post, with the post id as its name
     try:
         name = getName(imgUrl)
         request = requests.get(imgUrl)
