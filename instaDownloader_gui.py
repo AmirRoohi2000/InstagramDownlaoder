@@ -21,6 +21,21 @@ btnFont = QFont("Times New Roman", 14)
 # set an icon for the window
 icon = QIcon('insta.ico')
 
+def getName(imgUrl):  # with this function, i grab the id of the post
+    try:
+        request = requests.get(imgUrl)  # pass in the url
+        resault = request.content  # scrap the data
+        soup = bs(resault, 'lxml')  # i think this beutifies it
+        for divData in soup.findAll("meta", property="og:url"):  # save the meta with the property "og:url" in divData
+            text = divData['content']  # save the string
+            name1 = text.lstrip('https://www.instagram.com/p/')  # remove this part form that string
+            name = name1.replace('/', '')  # replace / with nothing
+
+        return name  # return the post ID, meaning the way of using is like this
+        # postName = getName(postURL)
+    except Exception as ex:
+        print(str(ex))
+
 # a function to rename the downloaded file, if user has specified so
 def checkFolders():
     try:
@@ -33,6 +48,30 @@ def checkFolders():
 
 # function to download the image(for now just image, later even video, i hope so)
 def download():
+    try:
+        name = getName(txtUrl.toPlainText())
+        request = requests.get(txtUrl.toPlainText())
+        resault = request.content
+        soup = bs(resault, 'lxml')
+        if soup.findAll("meta", property="og:video"):
+            for divData in soup.findAll("meta", property="og:video"):
+                imgSrc = divData['content']
+                fileName = 'InstaDownloads/' + name + '.mp4'
+                urllib.request.urlretrieve(imgSrc, fileName)
+        elif soup.findAll("meta", property="og:image"):
+            for divData in soup.findAll("meta", property="og:image"):
+                imgSrc = divData['content']
+                fileName = 'InstaDownloads/' + name + '.png'
+                urllib.request.urlretrieve(imgSrc, fileName)
+
+        txtUrl.clear()
+        txtName.clear()
+    except Exception as ex:
+        msg = QErrorMessage()
+        msg.showMessage(str(ex))
+
+
+def downloadName():  # this function is the same as above, only that you pick a name
     try:
         request = requests.get(txtUrl.toPlainText())
         resault = request.content
@@ -48,11 +87,8 @@ def download():
                 fileName = 'InstaDownloads/' + txtName.toPlainText() + '.png'
                 urllib.request.urlretrieve(imgSrc, fileName)
 
-        txtUrl.clear()
-        txtName.clear()
     except Exception as ex:
-        msg = QErrorMessage()
-        msg.showMessage(str(ex))
+        print(str(ex))
 
 
 # set up a label
