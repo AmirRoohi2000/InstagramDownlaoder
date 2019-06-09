@@ -21,18 +21,18 @@ def getName(imgUrl):  # with this function, i grab the id of the post
     except Exception as ex:
         print(str(ex))
 
-def download(imgUrl):  #
+def download(imgUrl):  # this function grabs the data from the given url and downloads the post, with the post id as its name
     try:
         name = getName(imgUrl)
         request = requests.get(imgUrl)
         resault = request.content
         soup = bs(resault, 'lxml')
-        if soup.findAll("meta", property="og:video"):
-            for divData in soup.findAll("meta", property="og:video"):
+        if soup.findAll("meta", property="og:video"):  # so if we find a video
+            for divData in soup.findAll("meta", property="og:video"):  # then we download the video, with the mp4 format
                 imgSrc = divData['content']
                 fileName = 'InstaDownloads/' + name + '.mp4'
                 urllib.request.urlretrieve(imgSrc, fileName)
-        elif soup.findAll("meta", property="og:image"):
+        elif soup.findAll("meta", property="og:image"):  # in case of an image, then we download the image with the png format
             for divData in soup.findAll("meta", property="og:image"):
                 imgSrc = divData['content']
                 fileName = 'InstaDownloads/' + name + '.png'
@@ -41,7 +41,7 @@ def download(imgUrl):  #
     except Exception as ex:
         print(str(ex))
 
-def downloadName(imgUrl, name):
+def downloadName(imgUrl, name):  # this function is the same as above, only that you pick a name
     try:
         request = requests.get(imgUrl)
         resault = request.content
@@ -61,10 +61,10 @@ def downloadName(imgUrl, name):
         print(str(ex))
 
 
-def checkFolders():
+def checkFolders():  # with this function, a folder is created, if its not there
     try:
-        for files in os.listdir(os.curdir):
-            if not os.path.exists('InstaDownloads'):
+        for files in os.listdir(os.curdir):  # check all the folders in the directory of the app
+            if not os.path.exists('InstaDownloads'):  # if the "InstaDownlaods" does not exist, create it
                 os.makedirs('InstaDownloads')
     except Exception as ex:
         print(str(ex))
