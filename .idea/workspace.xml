@@ -30,8 +30,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/instaDownloader_console.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+            <state relative-caret-position="285">
+              <caret line="36" column="69" lean-forward="true" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
+              <folding>
+                <element signature="e#97#112#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,7 +117,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.instaDownloader_noName_console">
+  <component name="RunManager" selected="Python.instaDownloader_gui">
     <configuration name="instaDownloader_console" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="InstagramDownlaoder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -275,8 +278,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/instaDownloader_console.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        <state relative-caret-position="285">
+          <caret line="36" column="69" lean-forward="true" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
+          <folding>
+            <element signature="e#97#112#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
